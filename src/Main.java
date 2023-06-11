@@ -7,15 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try{
-            checkPassword("admin", "qwerty", "qwerty");
-        } catch (WrongLoginException | WrongPasswordException e) {
-            e.printStackTrace();
-        }
+
+        checkPassword("admin", "qwerty", "qwerty");
+
 
     }
 
-    public static void checkPassword(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
+    public static void checkPassword(String login, String password, String confirmPassword) {
 
         if (!login.matches(ALLOWED_CHARS)) {
             throw new WrongLoginException("Login is incorrect");
